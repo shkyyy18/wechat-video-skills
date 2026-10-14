@@ -1,5 +1,7 @@
 # 微存 WeSave
 
+[![CI](https://github.com/shkyyy18/wechat-video-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/shkyyy18/wechat-video-skills/actions/workflows/ci.yml)
+
 **让 AI 按你的系统自动化下载、核验和保存微信视频号视频。** macOS 与 Windows 各有独立 Skill 安装包；下载通道依赖已配置的本机上游运行时。Windows 另提供 OBS 定时录制备用流程。
 
 > 开发预览版 0.1.0-preview.1。两个安装包已设计为独立交付；Mac 真机和 Windows 原文件下载尚未完成端到端验收。录制生成的是重新编码的播放副本，不是服务器原文件，也不保证无损。

@@ -13,3 +13,5 @@ macOS / Windows 两个独立 Agent Skill，自动化调用本机下载接口保�
 开发预览：本地26项Python和16项Node合成/工程测试通过，不代表真实微信下载验收。Mac 真机下载、Windows 原文件下载和新包 OBS 真微信回归尚待验证。OBS 输出是录制副本，不是无损原片。上游二进制不随包分发。
 
 包含完整源代码、双语说明、依赖归属、媒体核验、任务续查、独立安装包与校验和。不安装证书、不改系统代理或保护设置。
+
+云端工程测试：Windows / macOS / Linux × Python 3.10 / 3.12，6/6 通过。[运行记录](https://github.com/shkyyy18/wechat-video-skills/actions/runs/38512333471)。该结果不替代真实微信端到端验收。
