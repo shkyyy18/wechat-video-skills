@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-preview.2 — 2026-10-14
+
+- Add authorized-browser Douyin media saving to both OS packages.
+- Check observed page/media IDs, duration, audio, decoding and exclusive output creation.
+- Two live Windows media samples passed; enabled-versus-disabled author setting coverage remains unverified.
+- Keep WeChat as the primary workflow; preserve preview.1 artifacts.
+
+
 ## 0.1.0-preview.1 — 2026-10-14
 
 - Separate macOS and Windows Skills.

@@ -1,11 +1,15 @@
 ---
 name: channels-video-macos
-description: 在 macOS 上通过已配置的本地运行时自动化保存微信视频号视频，支持任务续查和媒体核验。用于下载或保存授权视频；开发预览，Mac 真机下载待验收，不含 OBS 备用录制。
+description: 在 macOS 上通过已配置的本地运行时自动化保存微信视频号视频，支持任务续查和媒体核验。并通过授权浏览器保存可播放的抖音视频。用于下载或保存授权视频；开发预览，Mac 真机下载待验收，不含 OBS 备用录制。
 ---
 
 # 微存 WeSave · macOS 微信视频保存
 
-## 执行顺序
+## 平台路由
+
+微信视频号是主入口，走下列下载/录制流程。抖音链接或明确“下载抖音”时，先读 [抖音获取](references/douyin.md)，使用授权浏览器取得当前作品媒体，再运行 scripts/douyin.py。不要把抖音链接交给微信 download.py；不用 OBS 冒充原文件下载。
+
+## 微信执行顺序
 
 1. 确认系统匹配本包。沿用用户已给的视频链接、保存目录和范围，不重新做账号发现。
 2. 阅读 references/setup.md。需要 Python 3.10+、FFmpeg/ffprobe 和用户已配置的本机 wx_channels_download v260907。当前为开发预览，真实微信下载尚待该系统验收。

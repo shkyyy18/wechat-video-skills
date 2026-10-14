@@ -6,7 +6,7 @@ Automate saving WeChat Channels videos with separate macOS and Windows Agent Ski
 
 [中文](README.md) · [Installation](docs/INSTALL.md) · [Compatibility](docs/COMPATIBILITY.md)
 
-[Download the macOS or Windows package](https://github.com/shkyyy18/wechat-video-skills/releases/tag/v0.1.0-preview.1) · [Project page](https://shkyyy18.github.io/wechat-video-skills/). Each ZIP is self-contained; checksums accompany the archives. A compatible agent reads SKILL.md and invokes the included scripts.
+[Download the macOS or Windows package](https://github.com/shkyyy18/wechat-video-skills/releases/tag/v0.1.0-preview.2) · [Project page](https://shkyyy18.github.io/wechat-video-skills/). Each ZIP is self-contained; checksums accompany the archives. A compatible agent reads SKILL.md and invokes the included scripts.
 
 The download path uses a separately configured ltaoo/wx_channels_download v260907 local runtime: resolve share URL, create once, poll by task ID, validate local paths, decode the output and report SHA256. It requires Python 3.10+, FFmpeg and ffprobe. A share URL alone does not establish a usable logged-in runtime.
 
@@ -15,3 +15,7 @@ Windows fallback requires OBS with authenticated local WebSocket v5 and Node.js 
 Run python tools/build.py first. Use python -m unittest discover -s tests -v and node --test tests/obs.test.mjs for synthetic checks; python tools/build.py produces OS-specific ZIPs. CI defines Windows and macOS runners; a workflow file alone is not evidence that cloud CI passed.
 
 Original code/docs: MIT. Upstream downloader: MIT plus Commons Clause; not bundled. OBS/FFmpeg have independent licenses. No affiliation with Tencent/WeChat/OBS. This project does not install certificates, change proxies or weaken OS protections. Save only content you are authorized to retain.
+
+## Douyin browser-media workflow
+
+The Skills now include douyin.py: an authorized browser resolves a playable page and supplies observed media identity/duration. The helper downloads that normal player URL, or ingests the browser download, then verifies decoding/audio/duration without overwriting. Two real Windows samples passed media saving and decoding; native-download-enabled versus author-disabled coverage is **not established**. macOS live browser acceptance remains pending. This is not a standalone share-link resolver or a restriction bypass.

@@ -11,13 +11,14 @@ class Packages(unittest.TestCase):
     def test_archives_are_independent_and_cli_loads(self):
         for system in ('macos','windows'):
             name = 'channels-video-'+system
-            archive = ROOT/'dist'/(name+'-0.1.0-preview.1.zip')
+            version = json.loads((ROOT/'skills'/name/'manifest.json').read_text())['version']
+            archive = ROOT/'dist'/(name+'-'+version+'.zip')
             with self.subTest(system=system), tempfile.TemporaryDirectory() as temp:
                 with zipfile.ZipFile(archive) as z: z.extractall(temp)
                 skill = Path(temp)/name
                 self.assertTrue((skill/'SKILL.md').exists())
                 self.assertEqual((skill/'scripts/record.mjs').exists(), system=='windows')
-                for script in ['download.py','media.py']:
+                for script in ['download.py','media.py','douyin.py']:
                     result = subprocess.run([sys.executable, str(skill/'scripts'/script), '--help'], capture_output=True)
                     self.assertEqual(result.returncode, 0, result.stderr)
     def test_manifest_hashes(self):

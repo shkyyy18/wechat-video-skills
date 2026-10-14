@@ -1,17 +1,11 @@
-# 微存 WeSave 0.1.0-preview.1
+# 微存 WeSave 0.1.0-preview.2
 
-macOS / Windows 两个独立 Agent Skill，自动化调用本机下载接口保存授权的微信视频号视频；Windows 另提供 OBS 定时录制与 MP4 导出。
+微信视频号仍是主卖点；本版为 Mac、Windows 两个 Skill 加入抖音正常可播放网页媒体的获取流程。
 
-## 下载
-- macOS：channels-video-macos-0.1.0-preview.1.zip
-- Windows：channels-video-windows-0.1.0-preview.1.zip
-- 用 SHA256SUMS 校验，解压后按安装说明放入 Agent 的 Skill 目录。
+- 微信：保留本机下载API与Windows OBS备用流程，原文件下载验收仍待完成。
+- 抖音：授权浏览器定位视频 → douyin.py获取或接收已下载文件 → 作品ID、时长、音轨、完整解码与哈希核验。
+- 已在Windows保存两条真实网页视频并通过技术媒体检查；不含第三方视频，不宣称可下载任意受限内容。
+- 两条样本的作者允许/禁止下载设置尚未核实，不能当成两类都已通过。Mac真实浏览器获取仍待验收。
+- 需要Agent浏览器能力、Python3.10+、FFmpeg/ffprobe；抖音路径不依赖微信下载器，也不使用OBS录屏。
 
-## 前提与状态
-下载依赖自行评估并配置的 wx_channels_download v260907、Python 3.10+、FFmpeg/ffprobe。Windows 录制另需 OBS 与 Node.js 22.4+。
-
-开发预览：本地26项Python和16项Node合成/工程测试通过，不代表真实微信下载验收。Mac 真机下载、Windows 原文件下载和新包 OBS 真微信回归尚待验证。OBS 输出是录制副本，不是无损原片。上游二进制不随包分发。
-
-包含完整源代码、双语说明、依赖归属、媒体核验、任务续查、独立安装包与校验和。不安装证书、不改系统代理或保护设置。
-
-云端工程测试：Windows / macOS / Linux × Python 3.10 / 3.12，6/6 通过。[运行记录](https://github.com/shkyyy18/wechat-video-skills/actions/runs/38512333471)。该结果不替代真实微信端到端验收。
+下载对应系统ZIP，核对SHA256SUMS后安装。先前preview.1仍保留。工程测试计划：38项Python+16项Node，结果以本版GitHub Actions为准。

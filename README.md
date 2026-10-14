@@ -2,9 +2,9 @@
 
 [![CI](https://github.com/shkyyy18/wechat-video-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/shkyyy18/wechat-video-skills/actions/workflows/ci.yml)
 
-**让 AI 按你的系统自动化下载、核验和保存微信视频号视频。** macOS 与 Windows 各有独立 Skill 安装包；下载通道依赖已配置的本机上游运行时。Windows 另提供 OBS 定时录制备用流程。
+**让 AI 按你的系统自动化下载、核验和保存微信视频号视频。** macOS 与 Windows 各有独立 Skill 安装包；下载通道依赖已配置的本机上游运行时。Windows 另提供 OBS 定时录制备用流程。**同时支持通过授权浏览器保存可播放的抖音网页视频。**
 
-> 开发预览版 0.1.0-preview.1。两个安装包已设计为独立交付；Mac 真机和 Windows 原文件下载尚未完成端到端验收。录制生成的是重新编码的播放副本，不是服务器原文件，也不保证无损。
+> 开发预览版 0.1.0-preview.2。两个安装包已设计为独立交付；Mac 真机和 Windows 原文件下载尚未完成端到端验收。录制生成的是重新编码的播放副本，不是服务器原文件，也不保证无损。
 
 [English](README.en.md) · [安装](docs/INSTALL.md) · [兼容与验收](docs/COMPATIBILITY.md) · [质量检查](docs/QUALITY.md) · [来源与依赖](THIRD_PARTY_NOTICES.md)
 
@@ -12,10 +12,10 @@
 
 | 系统 | Skill 文件夹 / ZIP | 主要功能 |
 |---|---|---|
-| macOS | channels-video-macos | 本机下载 API → 等待任务 → 文件/声轨/时长/解码/哈希核验 |
-| Windows | channels-video-windows | 同一下载流程；另含 OBS 窗口与应用音频录制、定时停止、裁切导出 |
+| macOS | channels-video-macos | 微信本机下载 API；抖音浏览器媒体 → 文件/声轨/时长/解码/哈希核验 |
+| Windows | channels-video-windows | 微信/抖音同一分平台路由；另含 OBS 窗口与应用音频录制、定时停止、裁切导出 |
 
-[下载 macOS / Windows 安装包](https://github.com/shkyyy18/wechat-video-skills/releases/tag/v0.1.0-preview.1) · [项目介绍页](https://shkyyy18.github.io/wechat-video-skills/)。Release 附 SHA256SUMS。不要把整个仓库当成单个 Skill 安装。仓库的 skills/ 目录也可直接按系统选用。
+[下载 macOS / Windows 安装包](https://github.com/shkyyy18/wechat-video-skills/releases/tag/v0.1.0-preview.2) · [项目介绍页](https://shkyyy18.github.io/wechat-video-skills/)。Release 附 SHA256SUMS。不要把整个仓库当成单个 Skill 安装。仓库的 skills/ 目录也可直接按系统选用。
 
 ## 你可以这样说
 
@@ -24,6 +24,12 @@
 - Windows：“这个视频下载接口不可用，用 OBS 录制当前已打开的视频 60 秒，保存成 MP4 副本。”
 
 Agent 先检查系统、工具和本机运行时，再执行对应流程。分享链接不能替代微信登录、可播放状态及上游环境准备。
+
+## 抖音：已跑通的范围
+
+已在 Windows 环境保存并完整解码两条真实可播放网页视频，保留原有音轨，未用 OBS。需要 Agent 的授权浏览器先读取正确视频元素，再由包内 douyin.py 下载或接收浏览器下载文件并核验；它不是独立分享链接解析器。
+
+**尚未核实这两个样本分别属于“允许下载”和“作者禁用下载”。** 没找到下载按钮只记为未观察到，不能宣称已攻克禁下载。Mac 的真实浏览器获取仍待验收。只保存获准内容，不绕过登录、验证码或加密保护。
 
 ## 自动化范围
 

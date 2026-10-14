@@ -4,8 +4,8 @@ import hashlib
 import json
 import zipfile
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.1.0-preview.1'
-COMMON = ['download.py', 'media.py']
+VERSION = '0.1.0-preview.2'
+COMMON = ['download.py', 'media.py', 'douyin.py']
 EXTRA = ['obs.mjs', 'record.mjs']
 
 def build():
@@ -19,7 +19,7 @@ def build():
         for script in scripts:
             (skill/'scripts'/script).write_bytes((ROOT/'src'/script).read_bytes())
         allowed = ['SKILL.md', 'LICENSE', 'references/setup.md', 'references/dependencies.md',
-                   'references/api-contract.md'] + ['scripts/'+s for s in scripts]
+                   'references/api-contract.md', 'references/douyin.md'] + ['scripts/'+s for s in scripts]
         if system == 'windows':
             allowed.append('references/recording.md')
         manifest = {'version': VERSION, 'system': system, 'files': {

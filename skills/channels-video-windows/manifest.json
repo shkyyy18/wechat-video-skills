@@ -1,13 +1,15 @@
 {
-  "version": "0.1.0-preview.1",
+  "version": "0.1.0-preview.2",
   "system": "windows",
   "files": {
     "LICENSE": "2b18bf434574d499bc085bb4b53805da9ccb54f0d85c4b237441facc2118abb8",
-    "SKILL.md": "8e86777af835b93ee8df78c661648bbd33805415a498f9ef7e7bd407aee6a811",
+    "SKILL.md": "1895b918a5df1e1fd4c4318abb2d22be6a5ac172d0c2936ad0586e76992b7f0a",
     "references/api-contract.md": "44eedfbbcfdd0744ca8eced366cbb7f8c9aa1b1b96c8a60c0f0feceeb6129c7b",
     "references/dependencies.md": "90565b54cf5e4e91a05dbbf542cfd36acb4c8773e7a41fcdc67cb22e2e16f9d9",
+    "references/douyin.md": "39980340b9a74eda797dec7f30c0f718ca071f788152ce9731466281fa7f9ed0",
     "references/recording.md": "53cc779346c267a604f42242b666fc0edaf79f8444a5a2cb1a070587d29acf62",
     "references/setup.md": "def86707c7ac5da77903165055220e72e0b490d58f0dbc980bce28420ce9d488",
+    "scripts/douyin.py": "9f65dc14a948c7c32f1a54f9ffd32dcdfffa371137bf095746b919aca5fbc80f",
     "scripts/download.py": "16ddc4034abaf97229da97f505c55226926565c912b5ea4dc873db2c1b13e8a2",
     "scripts/media.py": "27e31218b437f886a93137cac5a74b080ad6f83faaad5f6dd13c46001e76b8a5",
     "scripts/obs.mjs": "c51b669032b04fb3a34b1837a8dad271bf3dd4cebd434a52a92c176af7d1c2ba",
