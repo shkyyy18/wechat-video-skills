@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+dist/
+.runtime/
+obs-config.json
+*.log
+*.mp4
+*.mkv
+*.webm
+.DS_Store

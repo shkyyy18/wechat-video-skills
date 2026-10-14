@@ -1,0 +1,42 @@
+name: Validate Skills
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install media tools on Windows
+        if: runner.os == 'Windows'
+        run: choco install ffmpeg --no-progress -y
+      - name: Install media tools on macOS
+        if: runner.os == 'macOS'
+        run: brew install ffmpeg
+      - name: Install media tools on Linux
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Require media dependencies
+        run: python -c "import shutil; assert shutil.which('ffmpeg') and shutil.which('ffprobe')"
+      - run: python tools/build.py
+      - run: python -m unittest discover -s tests -v
+      - run: node --test tests/obs.test.mjs
+      - run: python tools/audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skills-${{ matrix.os }}-${{ matrix.python }}
+          path: dist/

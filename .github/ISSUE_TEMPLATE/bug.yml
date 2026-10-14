@@ -1,0 +1,27 @@
+name: Compatibility or bug report
+description: Report a redacted reproducible problem
+body:
+  - type: markdown
+    attributes:
+      value: "Do not upload credentials, full private URLs, OBS passwords or private videos."
+  - type: input
+    id: environment
+    attributes:
+      label: OS / CPU / Python / Node / upstream / OBS versions
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Download API
+        - Windows OBS recording
+        - Installation / packaging
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and expected versus actual result
+      description: Use synthetic input and redacted errors only.
+    validations:
+      required: true

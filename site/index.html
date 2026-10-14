@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>微存 WeSave · 微信视频自动保存</title>
+<style>body{font:17px/1.8 system-ui,sans-serif;background:#f4f7fb;color:#182a3b;margin:0}main{max-width:920px;margin:60px auto;padding:24px}.label{color:#126c59}h1{font-size:clamp(32px,5vw,54px);line-height:1.2}section{padding:22px;background:white;border-radius:16px;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}a{color:#126c59}small{color:#586775}</style>
+<main><span class="label">开发预览 · macOS / Windows Agent Skills</span><h1>微存 WeSave<br>让 AI 帮你保存<br>微信视频号视频</h1><p>按系统选择 Skill，自动提交下载任务、等待结果、检查文件；Windows 还提供 OBS 定时录制备用流程。</p>
+<div class="grid"><section><h2>macOS</h2><p>本机下载 API → 任务续查 → 视频核验</p><small>需要已配置的上游运行时；Mac 真机下载待验收。</small></section><section><h2>Windows</h2><p>本机下载 API ＋ OBS 定时录制 → MP4</p><small>下载待真机验收；OBS 副本是重新编码的播放记录。</small></section></div>
+<section><h2>一句指令，明确结果</h2><p>“把这个视频号链接保存到指定目录，检查能否播放，并告诉我是下载原文件还是录制副本。”</p><p>这是使用方式示例，不是已执行任务或真实用户反馈。Skill 不代替微信登录、访问权限、应用准备或实际听检。</p></section>
+<section><h2>透明的能力边界</h2><p>下载引擎来自独立上游项目，录制来自 OBS，媒体处理来自 FFmpeg；本项目提供流程协调、错误处理和交付检查。</p><p><a href="https://github.com/shkyyy18/wechat-video-skills">公开源代码</a> · <a href="https://github.com/shkyyy18/wechat-video-skills/releases/tag/v0.1.0-preview.1">下载 Mac / Windows Skill</a></p></section>
+<small>0.1.0-preview.1 · 无表单、无跟踪、无凭据收集 · 非微信官方项目</small></main></html>
